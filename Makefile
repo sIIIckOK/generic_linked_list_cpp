@@ -1,2 +1,2 @@
 run:
-	@g++ main.cpp
+	@g++ example.cpp

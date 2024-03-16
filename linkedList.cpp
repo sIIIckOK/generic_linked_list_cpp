@@ -62,20 +62,20 @@ void LinkedList<T>::Print(){
 
 template <typename T>
 void LinkedList<T>::SwapElements(int i1, int i2){
+    if (i1 == i2) return;
     Node<T>* n1 = GetElement(i1);    
     Node<T>* n2 = GetElement(i2);    
-    if (i1 == i2) return;
 
     if (n1 == this->head){
         n2->prev->next = n1;
         this->head = n2;
         n1->prev = n2->prev;
-        n2->prev = NULL;
+        n2->prev = nullptr;
     } else if (n2 == this->head){
         n1->prev->next = n2;
         this->head = n1;
         n2->prev = n1->prev;
-        n1->prev = NULL;
+        n1->prev = nullptr;
     } else {
         n1->prev->next = n2;
         n2->prev->next = n1;
@@ -88,12 +88,12 @@ void LinkedList<T>::SwapElements(int i1, int i2){
         n2->next->prev = n1;
         this->tail = n2;
         n1->next = n2->next;
-        n2->next = NULL;
+        n2->next = nullptr;
     } else if (n2 == this->tail){
         n1->next->prev = n2;
         this->tail = n1;
         n2->next = n1->next;
-        n1->next = NULL;
+        n1->next = nullptr;
     } else {
         n1->next->prev = n2;
         n2->next->prev = n1;
@@ -113,6 +113,4 @@ void LinkedList<T>::Extend(int count, ...){
         this->Append(v);
     }
 }
-
-
 
